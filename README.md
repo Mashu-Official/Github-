@@ -110,19 +110,6 @@ def download_images(remote_image_folder):   # remote_image_folder为仓库中储
             if file_response.status_code == 200:
                 # 解析文件内容的 JSON 数据
                 file_data = file_response.json()
-                # 下载逻辑
-                #
-                # # 获取图片的 Base64 编码
-                # content_base64 = file_data['content']
-
-                # # 将 Base64 解码并保存为图片文件
-                # image_filename = os.path.join("downloaded_images", os.path.basename(file_path))
-                # with open(image_filename, "wb") as file:
-                #     file.write(base64.b64decode(content_base64))
-
-                # 获取图片的URL并添加到列表
-                # image_url = file_data['download_url']
-                # image_urls.append(image_url)
 
                 # url的拼接
                 image_url = f"https://cdn.jsdelivr.net/gh/Mashu-Official/Blog_IMG-Cabin/img/{result_text}"
@@ -133,10 +120,6 @@ def download_images(remote_image_folder):   # remote_image_folder为仓库中储
         print(f"Failed to fetch file list. Status code: {response.status_code}")
 
     return image_urls
-
-# 设置 GitHub 仓库信息
-
-
 
 # 设置图片在仓库中的文件夹路径
 remote_image_folder = "img"
